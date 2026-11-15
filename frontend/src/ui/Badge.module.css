@@ -1,0 +1,37 @@
+/* Status is a printed label, not a capsule: mono caps, coloured text, a square glyph. */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: var(--label-size);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--text-3);
+}
+
+.mark {
+  color: var(--mark);
+}
+
+.ink {
+  color: var(--ink);
+}
+
+.pen {
+  color: var(--pen);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  flex: none;
+  background: currentColor;
+}
+
+.pulse {
+  animation: blink 1s steps(1, end) infinite;
+}

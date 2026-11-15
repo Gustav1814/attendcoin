@@ -1,0 +1,376 @@
+.root {
+  width: 100%;
+  background: var(--black);
+}
+
+.inner {
+  max-width: calc(var(--content-max) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding: var(--space-8) var(--gutter) var(--space-16);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.heading {
+  min-width: 0;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--text-2);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-3xl);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-tight);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-8);
+}
+
+@media (min-width: 960px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+    align-items: start;
+  }
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  min-width: 0;
+}
+
+.qrWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  width: min(100%, 64vh);
+}
+
+/* Registration brackets around the code, drawn just outside the light tile. */
+.qrFrame {
+  position: relative;
+  width: 100%;
+  padding: var(--space-3);
+  --c: var(--ink);
+  background:
+    linear-gradient(var(--c), var(--c)) top left / 20px 2px no-repeat,
+    linear-gradient(var(--c), var(--c)) top left / 2px 20px no-repeat,
+    linear-gradient(var(--c), var(--c)) top right / 20px 2px no-repeat,
+    linear-gradient(var(--c), var(--c)) top right / 2px 20px no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom left / 20px 2px no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom left / 2px 20px no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom right / 20px 2px no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom right / 2px 20px no-repeat;
+}
+
+.qr {
+  width: 100% !important;
+}
+
+.qrSkeleton {
+  aspect-ratio: 1;
+  height: auto !important;
+}
+
+.placeholder {
+  width: min(100%, 560px);
+}
+
+.rotation {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.rotationLabel {
+  font-family: var(--font-mono);
+  font-size: var(--label-size);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.clockLabel {
+  font-family: var(--font-mono);
+  font-size: var(--label-size);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.clockValue {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  letter-spacing: var(--tracking-display);
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-width: 0;
+}
+
+.count {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.countValue {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  line-height: 1;
+  letter-spacing: var(--tracking-display);
+  color: var(--ink);
+  text-shadow: var(--ink-bloom);
+}
+
+.countOf {
+  font-size: var(--text-xl);
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.countLabel {
+  margin: 0 0 var(--space-2);
+  color: var(--text-2);
+}
+
+/* Readout strip: ruled cells, number over label. */
+.breakdown {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: var(--space-3) 0 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.cell {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: 2px;
+  padding: var(--space-3) var(--space-3) var(--space-3) 0;
+}
+
+.cell + .cell {
+  padding-left: var(--space-3);
+  border-left: 1px solid var(--line);
+}
+
+.cellValue {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-medium);
+  line-height: 1.1;
+  letter-spacing: var(--tracking-tight);
+}
+
+.cellLabel {
+  font-family: var(--font-mono);
+  font-size: var(--label-size);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.relayDown {
+  margin: var(--space-2) 0 0;
+  font-size: var(--text-sm);
+  color: var(--pen);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.secondary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+.hint {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--text-3);
+}
+
+.result {
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  background: var(--surface-1);
+  animation: fade-up var(--dur-base) var(--ease-out);
+}
+
+.result p {
+  margin: 0;
+}
+
+.sectionTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--label-size);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.arrivalList,
+.rejectedList,
+.finalizeNotes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.arrivalList {
+  max-height: 44vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.arrival {
+  display: grid;
+  grid-template-columns: 2.5ch minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--line);
+  animation: fade-up var(--dur-base) var(--ease-out);
+}
+
+.arrivalName {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arrivalSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.arrivalIndex {
+  font-family: var(--font-mono);
+  font-size: var(--label-size);
+  color: var(--text-3);
+}
+
+.waiting {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-3);
+  align-items: start;
+  margin: 0;
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  color: var(--text-2);
+  font-size: var(--text-sm);
+}
+
+.waiting svg {
+  color: var(--text-3);
+  margin-top: 2px;
+}
+
+.rejectedList li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--line);
+  font-size: var(--text-sm);
+}
+
+.rejected .hint {
+  margin-top: var(--space-2);
+}
+
+.finalizeNotes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  color: var(--text-2);
+}
+
+/* Projector mode: nothing to click, everything readable from the back row. */
+.root:fullscreen {
+  overflow-y: auto;
+}
+
+.root[data-fullscreen] .inner {
+  max-width: none;
+  padding: var(--space-8) var(--space-10);
+}
+
+.root[data-fullscreen] .back,
+.root[data-fullscreen] .controls,
+.root[data-fullscreen] .rejected {
+  display: none;
+}
+
+.root[data-fullscreen] .qrWrap {
+  width: min(100%, 76vh);
+}
+
+.root[data-fullscreen] .title {
+  font-size: var(--text-3xl);
+}
+
+.root[data-fullscreen] .arrivalList {
+  max-height: 56vh;
+  font-size: var(--text-md);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arrival,
+  .result {
+    animation: none;
+  }
+}

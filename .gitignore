@@ -1,0 +1,11 @@
+node_modules/
+artifacts/
+cache/
+coverage/
+coverage.json
+typechain-types/
+.env
+dist/
+backend/data/
+deployments/localhost.seed.json
+*.log

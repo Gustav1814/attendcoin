@@ -1,0 +1,55 @@
+.ring {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+}
+
+.ring svg {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-90deg);
+}
+
+.track {
+  stroke: var(--surface-4);
+}
+
+.sweep {
+  stroke-linecap: round;
+  stroke-dashoffset: 0;
+  animation-name: sweep;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+.mark {
+  stroke: var(--mark);
+}
+
+.ink {
+  stroke: var(--ink);
+}
+
+.pen {
+  stroke: var(--pen);
+}
+
+.center {
+  position: relative;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text);
+}
+
+@keyframes sweep {
+  to {
+    stroke-dashoffset: var(--circ);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sweep {
+    animation: none;
+  }
+}

@@ -1,0 +1,13 @@
+.session {
+  display: flex;
+  flex-direction: column;
+}
+
+.date {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+}
+
+.filter {
+  min-width: 160px;
+}

@@ -1,0 +1,58 @@
+.track {
+  position: relative;
+  height: 4px;
+  background: var(--surface-3);
+  overflow: visible;
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  transition: width var(--dur-slow) var(--ease-out);
+}
+
+.ink {
+  background: var(--ink);
+}
+
+.mark {
+  background: var(--mark);
+}
+
+.pen {
+  background: var(--pen);
+}
+
+.marker {
+  position: absolute;
+  top: -3px;
+  width: 1px;
+  height: 10px;
+  background: var(--text-3);
+}
+
+.steps {
+  display: flex;
+  gap: 3px;
+}
+
+.step {
+  flex: 1;
+  height: 6px;
+  min-width: 8px;
+  background: var(--surface-3);
+  transition: background-color var(--dur-base) var(--ease-out);
+}
+
+/* .step comes after the tone classes, so filled steps need the extra weight. */
+.step.ink {
+  background: var(--ink);
+}
+
+.step.mark {
+  background: var(--mark);
+}
+
+.step.pen {
+  background: var(--pen);
+}

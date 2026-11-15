@@ -1,0 +1,68 @@
+/* The tabs sit in a flush panel, so they need the table's side padding. */
+.tabs > [role="tablist"] {
+  padding: 0 var(--space-6);
+}
+
+.item {
+  font-weight: var(--weight-medium);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-1);
+}
+
+.settled {
+  font-size: var(--text-sm);
+  color: var(--text-3);
+  white-space: nowrap;
+}
+
+.code {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.codeId {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.codeId .t-num {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-medium);
+}
+
+.collected {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  text-align: center;
+  padding: var(--space-6);
+}
+
+@media (max-width: 720px) {
+  .tabs > [role="tablist"] {
+    padding: 0 var(--space-4);
+  }
+}
+
+@media (max-width: 560px) {
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

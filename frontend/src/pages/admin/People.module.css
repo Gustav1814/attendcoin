@@ -1,0 +1,78 @@
+.toolbarTop {
+  padding-top: var(--space-5);
+}
+
+.fieldset {
+  display: grid;
+  gap: var(--space-4);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.progressRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+}
+
+.preview {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: min(44vh, 360px);
+  overflow-y: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overscroll-behavior: contain;
+}
+
+.previewRow {
+  display: grid;
+  grid-template-columns: 2.5ch minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-top: 1px solid var(--line);
+  font-size: var(--text-sm);
+}
+
+.previewRow:first-child {
+  border-top: 0;
+}
+
+.line {
+  color: var(--text-3);
+  text-align: right;
+}
+
+.rowStatus {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-1);
+  text-align: right;
+}
+
+.rowProblem {
+  max-width: 22ch;
+  font-size: var(--text-xs);
+  color: var(--text-3);
+}
+
+@media (max-width: 720px) {
+  .toolbarTop {
+    padding-top: var(--space-4);
+  }
+
+  .previewRow {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .line {
+    display: none;
+  }
+}

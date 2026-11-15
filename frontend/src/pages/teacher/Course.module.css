@@ -1,0 +1,18 @@
+.loadingHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+.blocked {
+  align-self: center;
+  font-size: var(--text-sm);
+  color: var(--text-3);
+}
+
+.flags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}

@@ -1,0 +1,95 @@
+.fieldset {
+  display: grid;
+  gap: var(--space-4);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.statusRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--line);
+}
+
+.statusTitle {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+}
+
+.pickBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.pickSearch {
+  flex: 1 1 220px;
+}
+
+.pickList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: min(46vh, 380px);
+  overflow-y: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overscroll-behavior: contain;
+}
+
+.pickList li + li {
+  border-top: 1px solid var(--line);
+}
+
+.pick {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  min-height: 48px;
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-out);
+}
+
+.pick:hover {
+  background: var(--surface-2);
+}
+
+.pick input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--mark);
+}
+
+.picked,
+.picked:hover {
+  box-shadow: inset 2px 0 0 var(--mark);
+  color: var(--text);
+}
+
+.pickEmpty {
+  padding: var(--space-4);
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .statusRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pick {
+    transition: none;
+  }
+}

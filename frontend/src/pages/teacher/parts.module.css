@@ -1,0 +1,103 @@
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  text-decoration: none;
+  border-radius: var(--radius-xs);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.back:hover {
+  color: var(--text);
+}
+
+.back:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.course {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.code {
+  font-weight: var(--weight-medium);
+}
+
+.rowLink {
+  color: var(--text);
+  text-decoration: none;
+  border-radius: var(--radius-xs);
+}
+
+.rowLink:hover {
+  color: var(--ink);
+}
+
+.rowLink:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.rowAction {
+  display: inline-flex;
+  justify-content: flex-end;
+}
+
+.title {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Shared by the report pages: a ruled block of stats rather than floating cards. */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--line);
+  overflow: hidden;
+}
+
+.stats > * {
+  padding: var(--space-6);
+  background: var(--panel-fill);
+}
+
+@media (max-width: 720px) {
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stats > * {
+    padding: var(--space-4);
+  }
+}
+
+.rate {
+  display: grid;
+  grid-template-columns: minmax(48px, 1fr) 4ch;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.rate > :last-child {
+  text-align: right;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-3);
+}

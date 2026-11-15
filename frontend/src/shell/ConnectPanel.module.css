@@ -1,0 +1,117 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.primary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.note {
+  font-size: var(--text-sm);
+  color: var(--text-3);
+}
+
+.error {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--pen);
+  border-radius: var(--radius-xs);
+}
+
+.error strong {
+  color: var(--pen);
+  font-weight: var(--weight-medium);
+}
+
+.dev {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--line);
+}
+
+.devHead {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.devHead .t-caps {
+  color: var(--text-2);
+}
+
+.group {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: var(--space-3);
+  align-items: start;
+}
+
+.groupLabel {
+  font-size: var(--text-sm);
+  color: var(--text-3);
+  padding-top: var(--space-2);
+}
+
+.accounts {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  gap: var(--space-2);
+}
+
+.account {
+  width: 100%;
+  min-height: var(--control-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-1);
+  font-size: var(--text-sm);
+  text-align: left;
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out);
+}
+
+.account:hover:not(:disabled) {
+  border-color: var(--line-strong);
+  background: var(--surface-2);
+}
+
+.account:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.active {
+  border-color: var(--mark);
+  box-shadow: inset 2px 0 0 var(--mark);
+}
+
+.accountLabel {
+  color: var(--text);
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .group {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .groupLabel {
+    padding-top: 0;
+  }
+}

@@ -1,0 +1,86 @@
+.status {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-strong);
+  background: var(--surface-2);
+  animation: fade-up var(--dur-base) var(--ease-out);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+}
+
+.signing .icon,
+.pending .icon {
+  color: var(--mark);
+}
+
+.confirmed {
+  border-color: var(--ink-line);
+}
+
+.confirmed .icon {
+  color: var(--ink);
+}
+
+.failed {
+  border-color: var(--pen-line);
+}
+
+.failed .icon {
+  color: var(--pen);
+}
+
+.copy {
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+}
+
+.detail {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  overflow-wrap: anywhere;
+}
+
+.hash {
+  color: var(--text-2);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--ink);
+}
+
+.link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-1);
+}
+
+@media (max-width: 560px) {
+  .status {
+    grid-template-columns: auto 1fr;
+  }
+
+  .actions {
+    grid-column: 2;
+  }
+}

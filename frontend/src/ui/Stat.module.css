@@ -1,0 +1,169 @@
+.group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-6) var(--space-8);
+}
+
+/* Ruled cells on one panel; a toned stat gets a short accent rule on its top edge. */
+.strip {
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-panel);
+  overflow: hidden;
+}
+
+.strip > .stat {
+  position: relative;
+  padding: var(--space-6);
+  background: var(--panel-fill);
+}
+
+.strip > .stat::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--space-6);
+  width: 24px;
+  height: 2px;
+  background: var(--line-strong);
+}
+
+.strip > [data-tone="mark"]::before {
+  background: var(--mark);
+}
+
+.strip > [data-tone="ink"]::before {
+  background: var(--ink);
+}
+
+.strip > [data-tone="pen"]::before {
+  background: var(--pen);
+}
+
+@media (max-width: 720px) {
+  .strip > .stat {
+    padding: var(--space-4);
+  }
+
+  .strip > .stat::before {
+    left: var(--space-4);
+  }
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--label-size);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--text-3);
+  line-height: var(--leading-snug);
+}
+
+.valueRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  min-height: 1em;
+}
+
+.value {
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.md .value {
+  font-size: var(--text-2xl);
+}
+
+.lg .value {
+  font-size: var(--text-4xl);
+  letter-spacing: -0.035em;
+}
+
+.xl .value {
+  font-size: clamp(var(--text-4xl), 9vw, var(--text-5xl));
+  letter-spacing: -0.04em;
+  font-weight: 450;
+}
+
+.unit {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-3);
+  letter-spacing: 0.02em;
+}
+
+.lg .unit,
+.xl .unit {
+  font-size: var(--text-md);
+}
+
+.mark {
+  color: var(--mark);
+}
+
+.ink {
+  color: var(--ink);
+}
+
+.pen {
+  color: var(--pen);
+}
+
+.xl .mark {
+  text-shadow: var(--mark-bloom);
+}
+
+.xl .ink {
+  text-shadow: var(--ink-bloom);
+}
+
+.xl .pen {
+  text-shadow: var(--pen-bloom);
+}
+
+.chart {
+  margin-top: auto;
+  padding-top: var(--space-2);
+}
+
+.delta {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.delta.up {
+  color: var(--ink);
+}
+
+.delta.down {
+  color: var(--pen);
+}
+
+.skeleton {
+  width: 6ch;
+  height: 0.9em;
+}
+
+.md .skeleton {
+  height: var(--text-2xl);
+}
+
+.lg .skeleton,
+.xl .skeleton {
+  height: var(--text-4xl);
+}

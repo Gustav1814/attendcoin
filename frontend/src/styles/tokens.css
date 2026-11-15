@@ -1,0 +1,145 @@
+/*
+  Three accents, each with one job. Contrast is measured against #000 and #111.
+    --mark  Highlighter. Primary actions, ATC amounts, pending.   15.9:1 / 14.3:1
+    --ink   Data. Attendance, meters, links, recorded/fulfilled.   11.2:1 / 10.1:1
+    --pen   Status. Live sessions, streaks, errors, destructive.    6.5:1 /  5.8:1
+  Dark text on any accent stays above 6:1.
+*/
+:root {
+  color-scheme: dark;
+
+  --black: #000000;
+  --surface-1: #0a0a0a;
+  --surface-2: #111111;
+  --surface-3: #181818;
+  --surface-4: #202020;
+
+  --line: #1c1c1c;
+  --line-strong: #2a2a2a;
+  --line-focus: #3a3a38;
+
+  --text: #f4f4f0;
+  --text-2: #a6a6a0;
+  --text-3: #85857f;
+  --text-disabled: #6b6b66;
+  --text-on-accent: #0a0a0a;
+
+  --mark: #eee54b;
+  --mark-hover: #f6ee6e;
+  --mark-dim: rgb(238 229 75 / 0.1);
+  --mark-line: rgb(238 229 75 / 0.32);
+
+  --ink: #2fd3c0;
+  --ink-hover: #5ee0d0;
+  --ink-dim: rgb(47 211 192 / 0.1);
+  --ink-line: rgb(47 211 192 / 0.32);
+
+  --pen: #ff4d61;
+  --pen-hover: #ff6d7e;
+  --pen-dim: rgb(255 77 97 / 0.1);
+  --pen-line: rgb(255 77 97 / 0.36);
+
+  /* Faint bloom for the one key number on a screen. */
+  --mark-bloom: 0 0 32px rgb(238 229 75 / 0.22);
+  --ink-bloom: 0 0 32px rgb(47 211 192 / 0.2);
+  --pen-bloom: 0 0 32px rgb(255 77 97 / 0.22);
+
+  --success: var(--ink);
+  --warning: var(--mark);
+  --danger: var(--pen);
+  --focus: var(--mark);
+
+  --font-display: "Newsreader Variable", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* 1.25 scale anchored at 15px body */
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.3125rem;
+  --text-xl: 1.625rem;
+  --text-2xl: 2.125rem;
+  --text-3xl: 2.75rem;
+  --text-4xl: 3.75rem;
+  --text-5xl: 4.75rem;
+
+  --leading-tight: 1.1;
+  --leading-snug: 1.3;
+  --leading-normal: 1.55;
+
+  --tracking-tight: -0.025em;
+  --tracking-display: -0.02em;
+  --tracking-caps: 0.08em;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+
+  --space-0-5: 2px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Square-cornered instrument panels. Full rounding is for avatars and rings only. */
+  --radius-xs: 2px;
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  --radius-full: 999px;
+
+  --control-sm: 32px;
+  --control-md: 40px;
+  --control-lg: 48px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 150ms;
+  --dur-base: 200ms;
+  --dur-slow: 250ms;
+
+  /* Panels: a hairline of light along the top edge, then a soft drop. */
+  --edge-hi: inset 0 1px 0 rgb(255 255 255 / 0.045);
+  --shadow-panel: var(--edge-hi), 0 1px 0 rgb(0 0 0 / 0.6), 0 12px 24px -16px rgb(0 0 0 / 0.9);
+  --panel-fill: linear-gradient(180deg, #0d0d0d 0%, var(--surface-1) 120px);
+
+  --label-size: 0.6875rem;
+  --label-tracking: 0.08em;
+
+  --shadow-overlay: 0 24px 48px -12px rgb(0 0 0 / 0.8), 0 0 0 1px var(--line-strong);
+
+  --content-max: 1120px;
+  --gutter: var(--space-6);
+  --topbar-h: 64px;
+  --bottombar-h: 64px;
+
+  --z-nav: 20;
+  --z-overlay: 40;
+  --z-toast: 50;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --gutter: var(--space-4);
+    --topbar-h: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
+  }
+}

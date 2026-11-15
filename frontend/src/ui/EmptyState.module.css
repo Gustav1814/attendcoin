@@ -1,0 +1,81 @@
+/* Crop marks in the four corners frame the empty area like an unprinted plate. */
+.empty {
+  --crop: var(--text-3);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-2) var(--space-5);
+  padding: var(--space-10) var(--space-8);
+  background:
+    linear-gradient(var(--crop), var(--crop)) top left / 12px 1px no-repeat,
+    linear-gradient(var(--crop), var(--crop)) top left / 1px 12px no-repeat,
+    linear-gradient(var(--crop), var(--crop)) top right / 12px 1px no-repeat,
+    linear-gradient(var(--crop), var(--crop)) top right / 1px 12px no-repeat,
+    linear-gradient(var(--crop), var(--crop)) bottom left / 12px 1px no-repeat,
+    linear-gradient(var(--crop), var(--crop)) bottom left / 1px 12px no-repeat,
+    linear-gradient(var(--crop), var(--crop)) bottom right / 12px 1px no-repeat,
+    linear-gradient(var(--crop), var(--crop)) bottom right / 1px 12px no-repeat,
+    repeating-linear-gradient(135deg, transparent 0 7px, rgb(255 255 255 / 0.018) 7px 8px);
+}
+
+.compact {
+  padding: var(--space-6);
+}
+
+.icon {
+  grid-row: span 3;
+  color: var(--text-3);
+  padding-top: 2px;
+}
+
+.icon svg {
+  width: 28px;
+  height: 28px;
+  stroke-width: 1.25;
+}
+
+.danger {
+  --crop: var(--pen);
+}
+
+.danger .icon {
+  color: var(--pen);
+}
+
+.copy {
+  display: grid;
+  gap: var(--space-1);
+  max-width: 52ch;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-snug);
+  color: var(--text);
+}
+
+.body {
+  color: var(--text-2);
+  font-size: var(--text-base);
+}
+
+.action {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.copy,
+.action {
+  grid-column: 2;
+}
+
+@media (max-width: 720px) {
+  .empty {
+    padding: var(--space-8) var(--space-5);
+    gap: var(--space-2) var(--space-4);
+  }
+}

@@ -1,0 +1,140 @@
+.button {
+  --h: var(--control-md);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: var(--h);
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  line-height: 1;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  user-select: none;
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: var(--radius-md);
+}
+
+.button:disabled,
+.button[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+.sm {
+  --h: var(--control-sm);
+  padding: 0 var(--space-3);
+  font-size: var(--text-sm);
+  border-radius: var(--radius-sm);
+}
+
+.lg {
+  --h: var(--control-lg);
+  padding: 0 var(--space-5);
+  font-size: var(--text-md);
+}
+
+.full {
+  width: 100%;
+}
+
+.iconOnly {
+  width: var(--h);
+  padding: 0;
+}
+
+.primary {
+  background: var(--mark);
+  color: var(--text-on-accent);
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--mark-hover);
+}
+
+.primary:disabled {
+  background: var(--surface-3);
+  color: var(--text-disabled);
+}
+
+.secondary {
+  background: var(--surface-2);
+  border-color: var(--line-strong);
+  color: var(--text);
+}
+
+.secondary:hover:not(:disabled) {
+  background: var(--surface-3);
+  border-color: var(--line-focus);
+}
+
+.secondary:disabled {
+  color: var(--text-disabled);
+}
+
+.ghost {
+  color: var(--text-2);
+}
+
+.ghost:hover:not(:disabled) {
+  color: var(--text);
+  background: var(--surface-2);
+}
+
+.ghost:disabled {
+  color: var(--text-disabled);
+}
+
+.danger {
+  color: var(--pen);
+  border-color: var(--pen-line);
+}
+
+.danger:hover:not(:disabled) {
+  background: var(--pen-dim);
+  border-color: var(--pen);
+}
+
+.danger:disabled {
+  color: var(--text-disabled);
+  border-color: var(--line-strong);
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.loading .label {
+  opacity: 0;
+}
+
+.spinner {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.icon {
+  display: inline-flex;
+  flex: none;
+}

@@ -1,0 +1,49 @@
+.live {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--pen);
+  border-radius: var(--radius-xs);
+  background: var(--panel-fill);
+  box-shadow: var(--shadow-panel);
+}
+
+.liveRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+}
+
+.liveRow + .liveRow {
+  border-top: 1px solid var(--line);
+}
+
+.liveDot {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  background: var(--pen);
+  animation: blink 1s steps(1, end) infinite;
+}
+
+.liveText {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--text-sm);
+  color: var(--text-2);
+}
+
+.liveText strong {
+  color: var(--text);
+  font-weight: var(--weight-medium);
+}
+
+.blocked {
+  font-size: var(--text-sm);
+  color: var(--text-3);
+  white-space: nowrap;
+}
